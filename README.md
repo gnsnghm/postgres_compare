@@ -22,3 +22,12 @@ So, I created my own Dockerfile so that I can quickly compare different versions
 `docker run -p 5434:5432 --name gnsnghm-postgresql96 -e POSTGRES_PASSWORD=postgres00 -d gnsnghm-postgresql:96`
 
 Notice:If port 5432 is already in use on the originating OS, change the port number.
+
+## Remarks
+
+### I want to change config file other than pg_hba.conf and postgresql.conf
+
+You can edit it by entering the console using docker exec.
+
+1. `docker exec -it [container name] /bin/bash`
+1. If you want to change pg_data file, `cd /var/lib/pgsql/data`
